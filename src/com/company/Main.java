@@ -56,18 +56,33 @@ public class Main {
         // symbols that is not words ([\P{L}]+) by spaces. After that we split
         // content string by spaces thar we created to get array of words.
         String content = lines.toString();
-        String[] words = content.replaceAll("[\\P{L}]+", " ").trim().split(
-                "\\s+");
-
-        // 5. Order the words in alphabetic order.
-        Arrays.sort(words);
+        String[] words = content
+                .replaceAll("[\\P{L}]+", " ")
+                .trim()
+                .toLowerCase()
+                .split("\\s+");
 
         // 4. Create another array containing distinct words.
-        String[] unique =
-                Arrays.stream(words).distinct().toArray(String[]::new);
+        // Here we will append to "uniqueWordsString" variable
+        // distinct words.
+        String uniqueWordsString = "";
+        for (int i = 0; i < words.length; i++) {
+            if (!uniqueWordsString.contains(words[i])){
+                uniqueWordsString += words[i] + " ";
+            }
+        }
+
+        // Splitting our long string by spaces
+        // to get array of distinct words.
+        String[] uniqueWords = uniqueWordsString
+                .trim()
+                .split("\\s+");
+
+        // 5. Order the words in alphabetic order.
+        Arrays.sort(uniqueWords);
 
         // Finally we output all the words after our manipulations.
-        for (String s : unique) {
+        for (String s : uniqueWords) {
             System.out.println(s);
         }
 
