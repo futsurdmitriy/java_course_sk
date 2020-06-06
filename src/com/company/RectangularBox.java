@@ -8,25 +8,15 @@
  * Copyright (c) Dmitriy Futsur
  *
  * Description:
-    Inheritance
-    1. Create a child  from the class Rectangle.
-    2. Create another class as a super class for your one.
-    Or create a daughterly class for your one.
-
-    My geometric figure is Rectangular Box.
-    First of all Rectangle class will be created,
-    then will be created RegularQadrangularPyramid that extends Rectangle class.
-    Then RectangularBox class that is my own class by task will be child class
-    of Rectangle.
+    Polymorphism.
+    Create and implement two interfaces for your class.
  */
 
 package com.company;
 
 import java.util.Objects;
 
-// 2. Create another class as a super class for your one.
-// Or create a daughterly class for your one.
-public class RectangularBox extends Rectangle {
+public class RectangularBox implements IGeometry, IPackaging {
 
     /**
      * Length of rectangularBox
@@ -56,7 +46,6 @@ public class RectangularBox extends Rectangle {
      * Class constructor without parameters
      */
     public RectangularBox() {
-        super();
         this.setHeight(4);
         this.setWidth(6);
         this.setLength(5);
@@ -125,10 +114,43 @@ public class RectangularBox extends Rectangle {
     @Override
     public String toString() {
         return "RectangularBox{ " +
-                " length= " + length +
-                ", width= " + width +
-                ", height= " + height +
+                " length= " + this.getLength() +
+                ", width= " + this.getWidth() +
+                ", height= " + this.getHeight() +
                 " }";
+    }
+
+    @Override
+    public String toJSON() {
+        return null;
+    }
+
+    @Override
+    public String toXML() {
+        return null;
+    }
+
+    @Override
+    public String toConsole() {
+        return null;
+    }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public double getArea() {
+        return 0;
+    }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public double getPerimeter() {
+        return 0;
     }
 
     /**
