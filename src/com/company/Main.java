@@ -8,15 +8,16 @@
  * Copyright (c) Dmitriy Futsur
  *
  * Description:
- * Java class creation
-    Create a class from the attached document according to the order in your group .  The class must contain
-    1. Constructor.
-    2. Getters/Setters.
-    3. 5 methods.
-    4. Override toString() method
-    5. Override hash() and equals() methods.
+    Inheritance
+    1. Create a child  from the class Rectangle.
+    2. Create another class as a super class for your one.
+    Or create a daughterly class for your one.
 
     My geometric figure is Rectangular Box.
+    First of all Rectangle class will be created,
+    then will be created RegularQadrangularPyramid that extends Rectangle class.
+    Then RectangularBox class that is my own class by task will be child class
+    of Rectangle.
  */
 
 package com.company;
@@ -25,68 +26,47 @@ public class Main {
 
     /**
      * Method that is default entry point of a program.
+     *
      * @param args Default argument for main method.
      */
     public static void main(String[] args) {
 
+        // Instantiate object of Rectangle class
+        // with default parameters
+        Rectangle rectangle1 = new Rectangle();
+
+        System.out.println("Output of rectangle 1 object: " +
+                rectangle1.toString());
+
+        // Object 1 instantiation of Pyramid class
+        // that is child class from Rectangle.
+        RegularQadrangularPyramid regQadPyramid1 =
+                new RegularQadrangularPyramid(4, 6, 5);
+
+        // Object 2 instantiation of Pyramid class
+        // that is child class from Rectangle but without height.
+        // Height will be calculated automatically.
+        RegularQadrangularPyramid regQadPyramid2 =
+                new RegularQadrangularPyramid(5, 7);
+
+        // Created pyramid object 1
+        System.out.println("\nPyramid object 1 = " + regQadPyramid1.toString());
+
+        // Created pyramid object 1
+        System.out.println("\nPyramid object 2 = " + regQadPyramid2.toString());
+
+        // For Pyramid class we can call some methods of parent class Rectangle
+        System.out.println("\nDiagonal of pyramid 2 base rectangle is: " +
+                regQadPyramid2.calculateDiagonalOfARectangle());
+
+        // My own created class according to task is RectangularBox.
+        // So my class is a child class form Rectangle class.
         // Instantiate first RectangularBox object with constructor
         // with default params.
         RectangularBox rectangleBox1 = new RectangularBox();
 
-        System.out.println("Result of \"toString\" overridden method " +
-                "for rectangle box 1 for equals: " +
-                rectangleBox1.toString());
-        System.out.println("Result of \"hash\" overridden method " +
-                "for rectangle box 1 equals: " +
-                rectangleBox1.hashCode());
-
-        // Output methods results for first object
-        System.out.println("The surface area of rectangle box 1 " +
-                "equals: " + rectangleBox1.calculateSurfaceArea());
-        System.out.println("The diagonal length of rectangle box 1 " +
-                "equals: " +
-                rectangleBox1.calculateDiagonalLengthOfRectangularBox());
-        System.out.println("The squared diagonal length of rectangle" +
-                " box 1 equals: " +
-                rectangleBox1.calculateSquaredDiagonalLengthOfRectangularBox());
-        System.out.println("The diagonal of rectangle box 1 surface  " +
-                "equals: " +
-                rectangleBox1.calculateDiagonalOfARectangleBoxSurface());
-        System.out.println("The volume of rectangle box 1 " +
-                "equals: " +
-                rectangleBox1.calculateVolumeOfRectangularBox());
-
-        // Instantiate second RectangularBox object with constructor
-        // with default params.
-        RectangularBox rectangleBox2 =
-                new RectangularBox(3, 4, 6);
-
-        System.out.println("Result of \"toString\" overridden method " +
-                "for rectangle box 2 equals: " +
-                rectangleBox2.toString());
-        System.out.println("Result of \"hash\" overridden method " +
-                "for rectangle box 2 equals: " +
-                rectangleBox2.hashCode());
-
-        // Output methods results for first object
-        System.out.println("\nThe surface area of rectangle box 2 " +
-                "equals: " + rectangleBox2.calculateSurfaceArea());
-        System.out.println("The diagonal length of rectangle box 2 " +
-                        "equals: " +
-                rectangleBox2.calculateDiagonalLengthOfRectangularBox());
-        System.out.println("The squared diagonal length of rectangle" +
-                        " box 2 equals: " +
-                rectangleBox2.calculateSquaredDiagonalLengthOfRectangularBox());
-        System.out.println("The diagonal of rectangle box 2 surface " +
-                        "equals: " +
-                rectangleBox2.calculateDiagonalOfARectangleBoxSurface());
-        System.out.println("The volume of rectangle box 2 " +
-                "equals: " +
-                rectangleBox2.calculateVolumeOfRectangularBox());
-
-        // Result of equals method
-        System.out.println("\nIs rectangular box 1 object equals" +
-                "rectangle box 2 : " +rectangleBox1.equals(rectangleBox2));
-
+        // Then call some parent methods
+        System.out.println("\nDiagonal of rectangle box is:" +
+                rectangleBox1.calculateDiagonalOfARectangle());
     }
 }

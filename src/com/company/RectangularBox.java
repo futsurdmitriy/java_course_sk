@@ -8,22 +8,25 @@
  * Copyright (c) Dmitriy Futsur
  *
  * Description:
- * Java class creation
-    Create a class from the attached document according to the order in your group .  The class must contain
-    1. Constructor.
-    2. Getters/Setters.
-    3. 5 methods.
-    4. Override toString() method
-    5. Override hash() and equals() methods.
+    Inheritance
+    1. Create a child  from the class Rectangle.
+    2. Create another class as a super class for your one.
+    Or create a daughterly class for your one.
 
     My geometric figure is Rectangular Box.
+    First of all Rectangle class will be created,
+    then will be created RegularQadrangularPyramid that extends Rectangle class.
+    Then RectangularBox class that is my own class by task will be child class
+    of Rectangle.
  */
 
 package com.company;
 
 import java.util.Objects;
 
-public class RectangularBox {
+// 2. Create another class as a super class for your one.
+// Or create a daughterly class for your one.
+public class RectangularBox extends Rectangle {
 
     /**
      * Length of rectangularBox
@@ -55,6 +58,7 @@ public class RectangularBox {
      * Class constructor without parameters
      */
     public RectangularBox() {
+        super();
         this.setHeight(4);
         this.setWidth(6);
         this.setLength(5);
@@ -130,11 +134,11 @@ public class RectangularBox {
      */
     @Override
     public String toString() {
-        return "RectangularBox{" +
-                " length=" + length +
-                ", width=" + width +
-                ", height=" + height +
-                '}';
+        return "RectangularBox{ " +
+                " length= " + length +
+                ", width= " + width +
+                ", height= " + height +
+                " }";
     }
 
     // 5. Override hash() and equals() methods.
