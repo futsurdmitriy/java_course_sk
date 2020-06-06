@@ -17,14 +17,16 @@ package com.company;
 public interface IGeometry {
 
     /**
-     *
-     * @return
+     * Interface method that must be implemented
+     * to calculate figure area.
+     * @return Must return double value which is figure area.
      */
     double getArea();
 
     /**
-     *
-     * @return
+     * Interface method that must be implemented
+     * to calculate figure perimeter.
+     * @return Must return double value which is figure parameter.
      */
     double getPerimeter();
 

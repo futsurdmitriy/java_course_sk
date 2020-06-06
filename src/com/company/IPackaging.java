@@ -17,26 +17,30 @@ package com.company;
 public interface IPackaging {
 
     /**
-     *
-     * @return
+     * Interface method that must be implemented
+     * to output object in string format.
+     * @return Must return string object representation.
      */
     String toString();
 
     /**
-     *
-     * @return
+     * Interface method that must be implemented
+     * to output object in string JSON format.
+     * @return Must return string JSON object representation.
      */
     String toJSON();
 
     /**
-     *
-     * @return
+     * Interface method that must be implemented
+     * to output object in XML format.
+     * @return Must return XML object representation.
      */
     String toXML();
 
     /**
-     *
-     * @return
+     * Interface method that must be implemented
+     * to output object fields in handsome way.
+     * @return Must return string object representation.
      */
     String toConsole();
 

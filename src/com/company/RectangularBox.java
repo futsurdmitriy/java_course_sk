@@ -120,37 +120,90 @@ public class RectangularBox implements IGeometry, IPackaging {
                 " }";
     }
 
+    /**
+     * Method that outputs object in string JSON format.
+     * @return Returns string JSON object representation.
+     */
     @Override
     public String toJSON() {
-        return null;
-    }
-
-    @Override
-    public String toXML() {
-        return null;
-    }
-
-    @Override
-    public String toConsole() {
-        return null;
+        return "{\"" +
+                    "rectangularBox\": {\n" +
+                        "    \"length\": " + this.getLength() + ",\n" +
+                        "    \"width\": " + this.getWidth() + ",\n" +
+                        "    \"height\": " + this.getHeight() + "\n" +
+                    "}" +
+               "}";
     }
 
     /**
-     *
-     * @return
+     * Method that outputs object in string XML format.
+     * @return Returns string XML object representation.
+     */
+    @Override
+    public String toXML() {
+        return "<RectangularBox>\n" +
+                    "   <length>" + this.getLength() + "</length>\n" +
+                    "   <width>" + this.getWidth() + "</width>\n" +
+                    "   <height>" + this.getHeight() + "</height>\n" +
+               "</RectangularBox>";
+    }
+
+    /**
+     * Method that outputs object in console in handsome way.
+     * @return Returns string object representation.
+     */
+    @Override
+    public String toConsole() {
+        return "RectangularBox = {\n" +
+                    "   length = " +
+                        this.getLength() +
+                    "\n" +
+                    "   width = " +
+                        this.getWidth() +
+                    "\n" +
+                    "   height = "
+                        + this.getHeight() +
+                    "\n" +
+                    "   rectangleExists = " +
+                        this.rectangleExists() +
+                    "\n" +
+                    "   calculateSquaredDiagonalLengthOfRectangularBox = " +
+                        this.calculateSquaredDiagonalLengthOfRectangularBox() +
+                    "\n" +
+                    "   calculateDiagonalLengthOfRectangularBox = " +
+                        this.calculateDiagonalLengthOfRectangularBox() +
+                    "\n" +
+                    "   calculateDiagonalOfARectangleBoxSurface = " +
+                        this.calculateDiagonalOfARectangleBoxSurface() +
+                    "\n" +
+                    "   calculateVolumeOfRectangularBox = " +
+                        this.calculateVolumeOfRectangularBox() +
+                    "\n" +
+                "}";
+    }
+
+    /**
+     * Method to calculate rectangularBox surface area.
+     * @return Returns rectangularBox surface area.
      */
     @Override
     public double getArea() {
-        return 0;
+        return this.calculateSurfaceArea();
     }
 
     /**
-     *
-     * @return
+     * Method to calculate perimeter of rectangularBox surface.
+     * @return Returns perimeter of rectangularBox surface.
      */
     @Override
     public double getPerimeter() {
-        return 0;
+        if (this.rectangleExists()) {
+            return 2 * (this.getLength() * this.getWidth());
+        } else {
+            System.out.println("Rectangular box is empty. " +
+                    "Surface area cannot be calculated.");
+            return 0;
+        }
     }
 
     /**
@@ -226,7 +279,7 @@ public class RectangularBox implements IGeometry, IPackaging {
      * https://ru.wikipedia.org/wiki/Прямоугольный_параллелепипед
      * @return Returns calculated surface area of rectangularBox.
      */
-    public int calculateSurfaceArea() {
+    public double calculateSurfaceArea() {
         if (this.rectangleExists()) {
             return 2 * (getLength() * getWidth() +
                     getWidth() * getHeight() +

@@ -28,13 +28,15 @@ public class Main {
         RectangularBox rectangleBox1 = new RectangularBox();
 
         // Output result of implemented methods of "IGeometry" interface.
-        rectangleBox1.getPerimeter();
-        rectangleBox1.getArea();
+        System.out.println("rectangularBox1 surface perimeter = " +
+                rectangleBox1.getPerimeter());
+        System.out.println("rectangularBox1 surface area = " +
+                rectangleBox1.getArea());
 
         // Output result of implemented methods of "IPackaging" interface.
-        rectangleBox1.toConsole();
-        rectangleBox1.toXML();
-        rectangleBox1.toJSON();
-        rectangleBox1.toString();
+        System.out.println("\nTo JSON\n" + rectangleBox1.toJSON());
+        System.out.println("\nTo XML\n" + rectangleBox1.toXML());
+        System.out.println("\nTo String\n" + rectangleBox1.toString());
+        System.out.println("\nTo Console\n" + rectangleBox1.toConsole());
     }
 }
