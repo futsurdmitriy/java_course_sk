@@ -43,8 +43,6 @@ public class RectangularBox extends Rectangle {
      */
     private int height;
 
-    // 1. Constructor.
-
     // default constructor.
     // It will be created by JAVA
     // if you doesn`t create it by
@@ -76,12 +74,6 @@ public class RectangularBox extends Rectangle {
         this.height = height;
     }
 
-    // 2. Getters/Setters.
-
-    /**
-     * Getter for rectangularBox length field
-     * @return Returns length of rectangularBox object
-     */
     public int getLength() {
         return length;
     }
@@ -126,8 +118,6 @@ public class RectangularBox extends Rectangle {
         this.height = height;
     }
 
-    // 4. Override toString() method
-
     /**
      * Method to get formatted rectangularBox object
      * @return Returns info about rectangularBox object
@@ -140,8 +130,6 @@ public class RectangularBox extends Rectangle {
                 ", height= " + height +
                 " }";
     }
-
-    // 5. Override hash() and equals() methods.
 
     /**
      * Method to check whether object equals by value
@@ -166,8 +154,6 @@ public class RectangularBox extends Rectangle {
     public int hashCode() {
         return Objects.hash(getLength(), getWidth(), getHeight());
     }
-
-    // 3. 5 methods.
 
     /**
      * Method that checks if rectangle has all fields set.
