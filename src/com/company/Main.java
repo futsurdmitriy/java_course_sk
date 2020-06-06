@@ -40,6 +40,7 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        System.out.println("\n Task 1 \n");
         // 1. Write to console 8 facts about yourself using primitive types.
         // Eight facts about me
         byte myAge = 23;
@@ -71,6 +72,8 @@ public class Main {
             informationAboutMyself.length()
         );
 
+
+        System.out.println("\n Task 2 \n");
         // 2. Check a string as a palindrome.
 
         // Use of scanner to ask user to enter palindrome string
@@ -105,6 +108,7 @@ public class Main {
             System.out.println("String is empty or didn`t match the regular expression.");
         }
 
+        System.out.println("\n Task 3 \n");
         // 3. Get the area limited by the following functions
         // x = 0 .. 3.14;  y = sin(x);   y = 0.1 * k,
         // where k is the last cipher in your student card;
