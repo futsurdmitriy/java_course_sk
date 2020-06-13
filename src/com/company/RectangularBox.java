@@ -3,18 +3,16 @@
  *
  * Version info 1.0
  *
- * 06-Jun-2020
+ * 13-Jun-2020
  *
  * Copyright (c) Dmitriy Futsur
  *
  * Description:
- * Java class creation
-    Create a class from the attached document according to the order in your group .  The class must contain
-    1. Constructor.
-    2. Getters/Setters.
-    3. 5 methods.
-    4. Override toString() method
-    5. Override hash() and equals() methods.
+    Develop for your class
+    1. Factory.
+    2. Abstract factory.
+    3. Create a class Student  - 25 fields.
+    4. Create a builder for the class Student
 
     My geometric figure is Rectangular Box.
  */
@@ -23,6 +21,12 @@ package com.company;
 
 import java.util.Objects;
 
+/**
+ * Class that represents Rectangular Box figure.
+ *
+ * @version 2.0 13 Jun 2020
+ * @author Dmitriy Futsur
+ */
 public class RectangularBox {
 
     /**
@@ -40,17 +44,6 @@ public class RectangularBox {
      */
     private int height;
 
-    // 1. Constructor.
-
-    // default constructor.
-    // It will be created by JAVA
-    // if you doesn`t create it by
-    // yourself
-
-    // public RectangularBox () {
-    //
-    // }
-
     /**
      * Class constructor without parameters
      */
@@ -67,12 +60,10 @@ public class RectangularBox {
      * @param height Height that will be set to rectangularBox object
      */
     public RectangularBox(int length, int width, int height) {
-        this.length = length;
-        this.width = width;
-        this.height = height;
+        this.setLength(length);
+        this.setWidth(width);
+        this.setHeight(height);
     }
-
-    // 2. Getters/Setters.
 
     /**
      * Getter for rectangularBox length field
@@ -122,22 +113,18 @@ public class RectangularBox {
         this.height = height;
     }
 
-    // 4. Override toString() method
-
     /**
      * Method to get formatted rectangularBox object
      * @return Returns info about rectangularBox object
      */
     @Override
     public String toString() {
-        return "RectangularBox{" +
+        return "RectangularBox {" +
                 " length=" + length +
                 ", width=" + width +
                 ", height=" + height +
-                '}';
+                " }";
     }
-
-    // 5. Override hash() and equals() methods.
 
     /**
      * Method to check whether object equals by value
@@ -162,8 +149,6 @@ public class RectangularBox {
     public int hashCode() {
         return Objects.hash(getLength(), getWidth(), getHeight());
     }
-
-    // 3. 5 methods.
 
     /**
      * Method that checks if rectangle has all fields set.
