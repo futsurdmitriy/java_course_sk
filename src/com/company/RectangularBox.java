@@ -27,7 +27,7 @@ import java.util.Objects;
  * @version 2.0 13 Jun 2020
  * @author Dmitriy Futsur
  */
-public class RectangularBox {
+public class RectangularBox implements IGeometry {
 
     /**
      * Length of rectangularBox
@@ -56,10 +56,10 @@ public class RectangularBox {
     /**
      * Class constructor with parameters
      * @param length Length that will be set to rectangularBox object
-     * @param width Width that will be set to rectangularBox object
      * @param height Height that will be set to rectangularBox object
+     * @param width Width that will be set to rectangularBox object
      */
-    public RectangularBox(int length, int width, int height) {
+    public RectangularBox(int length, int height, int width) {
         this.setLength(length);
         this.setWidth(width);
         this.setHeight(height);
@@ -156,41 +156,9 @@ public class RectangularBox {
      * @return Returns boolean value that depends on rectangularBox fields.
      */
     private boolean rectangleExists() {
-        if (this.getHeight() == 0 ||
-                this.getWidth() == 0 ||
-                this.getLength() == 0) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    /**
-     * Method that calculates squared diagonal length of rectangularBox.
-     * You can see formula on
-     * https://ru.wikipedia.org/wiki/Прямоугольный_параллелепипед
-     * @return Returns calculated squared diagonal length of rectangularBox.
-     */
-    public double calculateSquaredDiagonalLengthOfRectangularBox() {
-        if (this.rectangleExists()) {
-            return  (Math.pow(getLength(), 2) +
-                    Math.pow(getHeight(), 2) +
-                    Math.pow(getWidth(), 2));
-        } else {
-            System.out.println("Rectangular box is empty. " +
-                    "Squared diagonal length cannot be calculated.");
-            return 0;
-        }
-    }
-
-    /**
-     * Method that calculates diagonal length of rectangularBox.
-     * You can see formula on
-     * https://ru.wikipedia.org/wiki/Прямоугольный_параллелепипед
-     * @return Returns calculated diagonal length of rectangularBox.
-     */
-    public double calculateDiagonalLengthOfRectangularBox() {
-        return Math.sqrt(this.calculateSquaredDiagonalLengthOfRectangularBox());
+        return this.getHeight() != 0 &&
+                this.getWidth() != 0 &&
+                this.getLength() != 0;
     }
 
     /**
@@ -212,24 +180,6 @@ public class RectangularBox {
     }
 
     /**
-     * Calculates the diagonal of surface of rectangularBox by Pythagorean
-     * theorem. If the lengths of both a and b are known,
-     * then c can be calculated as c = √( a*a + b*b ), where a = height and
-     * b = length.
-     * URL https://en.wikipedia.org/wiki/Pythagorean_theorem
-     * @return Returns calculated diagonal length of a rectangularBox surface.
-     */
-    public double calculateDiagonalOfARectangleBoxSurface() {
-        if (this.getHeight() != 0 && this.getLength() != 0) {
-            return Math.sqrt(this.getHeight() * this.getLength());
-        } else {
-            System.out.println("Height and length of rectangle box is empty. " +
-                    "Diagonal of surface cannot be calculated.");
-            return 0;
-        }
-    }
-
-    /**
      * Method that calculates volume of a rectangularBox.
      * @return Returns volume of rectangularBox.
      */
@@ -243,4 +193,27 @@ public class RectangularBox {
         }
     }
 
+    /**
+     * Method that has to return current 3-dimensional figure
+     * volume.
+     *
+     * @return Returns double value of 3-dimensional figure
+     * volume.
+     */
+    @Override
+    public double getVolume() {
+        return this.calculateVolumeOfRectangularBox();
+    }
+
+    /**
+     * Method that has to return current 3-dimensional figure base
+     * surface area.
+     *
+     * @return Returns double value of 3-dimensional figure
+     * base surface area.
+     */
+    @Override
+    public double getSurfaceArea() {
+        return this.calculateSurfaceArea();
+    }
 }
