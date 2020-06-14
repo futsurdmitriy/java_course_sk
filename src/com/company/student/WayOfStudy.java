@@ -1,5 +1,5 @@
 /*
- * Class name :  Figure
+ * Class name :  WayOfStudy
  *
  * Version info 1.0
  *
@@ -17,17 +17,16 @@
     My geometric figure is Rectangular Box.
  */
 
-package com.company;
+package com.company.student;
 
 /**
- * Simple Enumerator class for 3-dimensional
- * geometric figures.
+ * Enum class that represents student form of study
  *
  * @author Dmitriy Futsur
  * @version 1.0 14 Jun 2020
  */
-public enum Figure {
-    RECTANGULAR_BOX,
-    REGULAR_TRIANGLE_PRISM,
-    CYLINDER
+public enum WayOfStudy {
+    BUDGET,
+    CONTRACT,
+    PRIVILEGE
 }
