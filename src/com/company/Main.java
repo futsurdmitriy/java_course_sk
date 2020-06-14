@@ -49,31 +49,83 @@ public class Main {
         // AbstractFactory class
         IGeometry cylinder1 =
                 AbstractFactory.create(3, 4, 5, Figure.CYLINDER);
-        System.out.println(cylinder1);
+        System.out.println("\n"+cylinder1);
 
         IGeometry rectangularBox2 =
                 AbstractFactory.create(3, 4, 5, Figure.RECTANGULAR_BOX);
-        System.out.println(rectangularBox2);
+        System.out.println("\n"+rectangularBox2);
 
         IGeometry prism1 =
                 AbstractFactory.create(3,4,5, Figure.REGULAR_TRIANGLE_PRISM);
-        System.out.println(prism1);
+        System.out.println("\n"+prism1);
 
         IGeometry emptyRectBox =
                 AbstractFactory.create(0,0,0, Figure.RECTANGULAR_BOX);
-        System.out.println(emptyRectBox);
+        System.out.println("\n"+emptyRectBox);
 
+        // Builder task
+        // Create a single student via simple constructor
+        Student simpleStudent = new Student(
+                new PersonalData(
+                        "my_first_name",
+                        "my_middle_name",
+                        "my_last_name",
+                        LocalDate.of(1980, 1, 13),
+                        new Address(
+                                Continent.AFRICA,
+                                "Egypt",
+                                "District 1",
+                                "Keir",
+                                "Ramzes",
+                                "8",
+                                "10"
+                        ),
+                        "+3800000005",
+                        "my.email3@email.com"
+                ),
+                "Cash",
+                "5133 1233 1111 0000",
+                20000,
+                WayOfStudy.CONTRACT,
+                LocalDate.of(2014, 9, 1),
+                LocalDate.of(2018, 12, 31),
+                new ContactPerson(new PersonalData(
+                        "Anton",
+                        "Andreevich",
+                        "Unknown",
+                        LocalDate.of(1997, 1, 13),
+                        new Address(
+                                Continent.EUROPE,
+                                "Ukraine",
+                                "Lvivska",
+                                "Lviv",
+                                "Kozaka",
+                                "321",
+                                "2"
+                        ),
+                        "+3800000000",
+                        "my.email@email.com"
+                )),
+                4,
+                0,
+                false,
+                123,
+                "First Group",
+                "IT Faculty",
+                "Software Engineering",
+                true,
+                0,
+                565,
+                false,
+                Gender.MALE,
+                false,
+                Scholarship.NONE,
+                "English",
+                false
+        );
+        System.out.println("\n"+simpleStudent);
 
-        /*
-        *  private Continent continent;
-            private String country;
-            private String region;
-            private String city;
-            private String street;
-            private String buildingNumber;
-            private String apartmentsNumbers;
-        * */
-
+        // Create a student via Builder methods
         Student dmitriyFutsur = new Student.Builder()
                 .setPersonalData(new PersonalData(
                         "Dmitriy",
@@ -132,9 +184,10 @@ public class Main {
                 .setForeignLanguage("English")
                 .setCaptain(false)
                 .build();
+        System.out.println("\n"+dmitriyFutsur);
 
-        System.out.println(dmitriyFutsur);
-
+        // Create a student via Builder similar to method
+        // from Student that is passed as a parameter to method
         Student antonStrashko =
                 new Student.Builder().setSimilarTo(dmitriyFutsur)
                 .setPersonalData(new PersonalData(
@@ -155,7 +208,7 @@ public class Main {
                         "my.email2@email.com"
 
                 )).build();
+        System.out.println("\n"+antonStrashko);
 
-        System.out.println(antonStrashko);
     }
 }
