@@ -59,6 +59,8 @@ public class Main {
         List<Integer> simpleListOfNumbers = new ArrayList<Integer>();
         LinkedList<Integer> linkedListOfNumbers = new LinkedList<Integer>();
 
+        // 1. Create ArrayList and LinkedList containing 100 000
+        // Integer elements. Compare time intervals.
         System.out.println(
                 "CREATION of simple list took \"" +
                         Main.createList(simpleListOfNumbers) +
@@ -73,6 +75,8 @@ public class Main {
                 "============================"
         );
 
+        // 2. Insert new 1000 elements on the beginning, on the middle and
+        // on the end of ones. Compare time intervals.
         System.out.println(
                 "\nINSERTION to BEGIN at simple list took \"" +
                         Main.processList(simpleListOfNumbers,
@@ -111,6 +115,8 @@ public class Main {
                         "============================"
         );
 
+        // 3. Update 1000 elements from the beginning, from the middle and
+        // from the end of ones. Compare time intervals.
         System.out.println(
                 "\nUPDATE at BEGIN of simple list took \"" +
                         Main.processList(simpleListOfNumbers,
@@ -152,6 +158,8 @@ public class Main {
                         "============================"
         );
 
+        // 4. Delete 1000 elements from the beginning, from the middle and
+        // from the end of ones. Compare time intervals.
         System.out.println(
                 "\nDELETION from the BEGIN of simple list took \"" +
                         Main.processList(simpleListOfNumbers,
