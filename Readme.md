@@ -1,11 +1,13 @@
-# Task "Programming patterns. Factory, Builder."
+# Task "JavaCollectionsFramework. List."
 By Dmitriy Futsur
 
 You may find all the logic in the "Main.java" class in the "package com.company" package.
 To do code more readable I have created a couple of functions to avoid repeated code.
 
 This is a simple description to current task via github Readme file.
+
 Task description:
+
 JavaCollectionsFramework. List.
 
 1. Create ArrayList and LinkedList containing  100 000 Integer elements. Compare time intervals.
