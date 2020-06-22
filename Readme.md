@@ -29,7 +29,8 @@ EXAMPLE
 6. Who get more salary, part-time or full-time employees?
 
 /----------------  Subjects according to your number ------------------
-4. Sugar packed and by weight.
+
+    4. Sugar packed and by weight.
 
 
 
