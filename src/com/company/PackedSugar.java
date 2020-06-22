@@ -63,15 +63,15 @@ public class PackedSugar extends Sugar implements ISugar {
     }
 
     /**
-     * Costructor
-     * @param sugarGrade
-     * @param sugarColorType
-     * @param sugarMadeFrom
-     * @param costPerOneKg
-     * @param isCrystallized
-     * @param isPressed
-     * @param popularity
-     * @param weight
+     * Constructor
+     * @param sugarGrade sugar grade
+     * @param sugarColorType sugar color type
+     * @param sugarMadeFrom vegetable from which sugar were made
+     * @param costPerOneKg cost of sugar per one kg
+     * @param isCrystallized whether sugar is crystallized
+     * @param isPressed whether sugar is pressed
+     * @param popularity popularity of sugar among customers
+     * @param weight sugar weight
      */
     public PackedSugar(String sugarGrade, String sugarColorType,
                        String sugarMadeFrom, int costPerOneKg,

@@ -60,14 +60,14 @@ public class Sugar implements ISugar{
 
     /**
      * Constructor
-     * @param sugarGrade
-     * @param sugarColorType
-     * @param sugarMadeFrom
-     * @param costPerOneKg
-     * @param isCrystallized
-     * @param isPressed
-     * @param popularity
-     * @param weight
+     * @param sugarGrade sugar grade
+     * @param sugarColorType sugar color type
+     * @param sugarMadeFrom vegetable from which sugar were made
+     * @param costPerOneKg cost of sugar per one kg
+     * @param isCrystallized whether sugar is crystallized
+     * @param isPressed whether sugar is pressed
+     * @param popularity popularity of sugar among customers
+     * @param weight sugar weight
      */
     public Sugar(String sugarGrade, String sugarColorType,
                  String sugarMadeFrom, int costPerOneKg,
@@ -111,7 +111,7 @@ public class Sugar implements ISugar{
 
     /**
      * Sets popularity
-     * @param popularity
+     * @param popularity Sugar popularity param
      */
     public void setPopularity(int popularity) {
         this.popularity = popularity;
@@ -127,7 +127,7 @@ public class Sugar implements ISugar{
 
     /**
      * Set sugar garde
-     * @param sugarGrade
+     * @param sugarGrade SugarGrade (first, second, third)
      */
     public void setSugarGrade(String sugarGrade) {
         this.sugarGrade = sugarGrade;
@@ -135,7 +135,7 @@ public class Sugar implements ISugar{
 
     /**
      *
-     * @return
+     * @return Returns sugar color type
      */
     public String getSugarColorType() {
         return sugarColorType;
@@ -143,95 +143,96 @@ public class Sugar implements ISugar{
 
     /**
      *
-     * @param sugarColorType
+     * @param sugarColorType Sets sugar color type
      */
     public void setSugarColorType(String sugarColorType) {
         this.sugarColorType = sugarColorType;
     }
 
     /**
-     *
-     * @return
+     * Returns from what sugar made from
+     * @return Returns sugarMadeFrom
      */
     public String getSugarMadeFrom() {
         return sugarMadeFrom;
     }
 
     /**
-     *
-     * @param sugarMadeFrom
+     * Sets sugar made from vegetable
+     * @param sugarMadeFrom From what sugarMadeFrom
      */
     public void setSugarMadeFrom(String sugarMadeFrom) {
         this.sugarMadeFrom = sugarMadeFrom;
     }
 
     /**
-     *
-     * @return
+     * Returns cost of sugar per one kg
+     * @return Returns cost of sugar per one kg
      */
     public int getCostPerOneKg() {
         return costPerOneKg;
     }
 
     /**
-     *
-     * @param costPerOneKg
+     * Sets costPerOneKg
+     * @param costPerOneKg costPerOneKg
      */
     public void setCostPerOneKg(int costPerOneKg) {
         this.costPerOneKg = costPerOneKg;
     }
 
     /**
-     *
-     * @return
+     * Returns boolean value. If sugar is crystallized or not
+     * @return Returns boolean value.
      */
     public boolean isCrystallized() {
         return isCrystallized;
     }
 
     /**
-     *
-     * @param crystallized
+     * Returns boolean value. If sugar is crystallized or not
+     * @param crystallized Param that represets wheather sugar is crystallized
+     * or not.
      */
     public void setCrystallized(boolean crystallized) {
         isCrystallized = crystallized;
     }
 
     /**
-     *
-     * @return
+     * Returns boolean value if sugar is pressed or not
+     * @return Returns boolean if pressed or not
      */
     public boolean isPressed() {
         return isPressed;
     }
 
     /**
-     *
-     * @param pressed
+     * Sets pressed field for sugar
+     * @param pressed pressed param
      */
     public void setPressed(boolean pressed) {
         isPressed = pressed;
     }
 
     /**
-     *
-     * @return
+     * Gets sugar weight
+     * @return Returns sugar weight value
      */
     public double getWeight() {
         return weight;
     }
 
     /**
-     *
-     * @param weight
+     * Sets sugar weight
+     * @param weight Sugar weight param
      */
     public void setWeight(double weight) {
         this.weight = weight;
     }
 
     /**
-     *
-     * @return
+     *  Returns sugar cost
+     * @return Returns cost of sugar
      */
     @Override
     public int calculateCost() {

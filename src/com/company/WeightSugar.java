@@ -63,14 +63,14 @@ public class WeightSugar extends Sugar implements ISugar{
 
     /**
      * Constructor
-     * @param sugarGrade
-     * @param sugarColorType
-     * @param sugarMadeFrom
-     * @param costPerOneKg
-     * @param isCrystallized
-     * @param isPressed
-     * @param popularity
-     * @param weight
+     * @param sugarGrade sugar grade
+     * @param sugarColorType sugar color type
+     * @param sugarMadeFrom vegetable from which sugar were made
+     * @param costPerOneKg cost of sugar per one kg
+     * @param isCrystallized whether sugar is crystallized
+     * @param isPressed whether sugar is pressed
+     * @param popularity popularity of sugar among customers
+     * @param weight sugar weight
      */
     public WeightSugar(String sugarGrade, String sugarColorType,
                        String sugarMadeFrom, int costPerOneKg,
