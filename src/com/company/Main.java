@@ -148,6 +148,8 @@ public class Main {
             totalSugarsWeight += listOfSugars.get(i).getWeight();
         }
 
+        System.out.println("Total sugars weight is " + totalSugarsWeight + "KG");
+
         // 3. find the most expensive sugar object
         Sugar theMostExpensiveSugar =
                 Collections.max(listOfSugars,
