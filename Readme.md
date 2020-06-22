@@ -1,4 +1,4 @@
-# Task "JavaCollectionsFramework. List."
+# Laboratory Work No.2."
 By Dmitriy Futsur
 
 You may find all the logic in the "Main.java" class in the "package com.company" package.
