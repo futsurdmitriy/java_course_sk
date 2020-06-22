@@ -35,6 +35,11 @@
 
 package com.company;
 
+/**
+ * Class for Sugar representation
+ * @author  Dmitriy Futsur
+ * @version @version 1.0 22 Jun 2020
+ */
 public class Sugar implements ISugar{
 
     private String sugarGrade;
@@ -98,14 +103,14 @@ public class Sugar implements ISugar{
 
     /**
      *
-     * @return
+     * @return Return sugar popularity
      */
     public int getPopularity() {
         return popularity;
     }
 
     /**
-     *
+     * Sets popularity
      * @param popularity
      */
     public void setPopularity(int popularity) {
@@ -113,15 +118,15 @@ public class Sugar implements ISugar{
     }
 
     /**
-     *
-     * @return
+     * Get Sugar Grade
+     * @return Returns sugar grade
      */
     public String getSugarGrade() {
         return sugarGrade;
     }
 
     /**
-     *
+     * Set sugar garde
      * @param sugarGrade
      */
     public void setSugarGrade(String sugarGrade) {
