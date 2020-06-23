@@ -1,9 +1,9 @@
 /*
  * Class name :  CompanyServiceImpl
  *
- * Version info 1.0
+ * @author Futsur Dmitriy
  *
- * 23 Jun 2020
+ * @version 1.0 05-Jun-2020
  *
  * Copyright (c) Dmitriy Futsur
  *
@@ -14,8 +14,16 @@ package com.company;
 
 import java.util.List;
 
+/**
+ * Company service implementation
+ * @author Futsur Dmitriy
+ * @version 1.0 05-Jun-2020
+ */
 public class CompanyServiceImpl implements ICompanyService {
 
+    /**
+     * Constructor
+     */
     public CompanyServiceImpl() {}
 
     @Override

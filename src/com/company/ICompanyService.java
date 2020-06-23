@@ -14,6 +14,10 @@ package com.company;
 
 import java.util.List;
 
+/**
+ *  @author Dmitriy Futsur
+ *  @version 1.0 23 Jun 2020
+ */
 public interface ICompanyService {
 
     /**

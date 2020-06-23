@@ -1,34 +1,26 @@
 /*
  * Class name :  Main
  *
- * 05-Jun-2020
+ * @author Dmitriy Futsur
  *
- * Copyright (c)  Futsur Dmitriy UzhNU
+ * @version 1.0 23 Jun 2020
  *
- * Description:
- *  Module_1 Task_4
- *  Arrays. Practice.
-    1. Find in the net and download a text version of a novel about Harry
-       Potter.  For instance,  "Harry Potter and the Sorcerer's Stone".
-    2. Split the novel into an array of words.
-    3. Clean the words from a punctuation signs.
-    4. Create another array containing distinct words.
-    5. Order the words in alphabetic order.
+ * Copyright (c) Dmitriy Futsur
  */
 
 package com.company;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Class Main
  * This is a main class that is entry point of program.
+ * @author Futsur Dmitriy
+ * @version 1.0 05-Jun-2020
  */
 public class Main {
 
