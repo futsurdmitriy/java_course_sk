@@ -168,7 +168,7 @@ public class Main {
         // 1.7.  Count them and arrange in alphabetic order.
         LinkedHashMap<String, Integer> glossarySortedProperNamesAlphabetic =
                 new LinkedHashMap<>();
-        glossary.entrySet()
+        glossarySortedDescProperNames.entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByKey(Comparator.naturalOrder()))
                 .forEachOrdered(x -> glossarySortedProperNamesAlphabetic.
