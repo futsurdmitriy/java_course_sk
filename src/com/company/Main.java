@@ -10,6 +10,7 @@
 
 package com.company;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -174,17 +175,31 @@ public class Main {
                         put(x.getKey(),
                         x.getValue()));
 
-        // 1.8.   First 20 pairs and names write into to a file test.txt
-        LinkedHashMap<String, Integer> resultList = new LinkedHashMap<>();
-        glossarySortedDescFirstTwenty.forEach((k,v)-> {
-            resultList.put(k,v);
-        });
-        glossarySortedProperNamesAlphabetic.forEach((k,v)-> {
-            resultList.put(k,v);
-        });
-
         // 1.9.  Create a fine header for the file
+        // 1.8.   First 20 pairs and names write into to a file test.txt
+        FileWriter fw = null;
+        fw = new FileWriter("test.txt");
+        fw.write(
+                "This is very fine header, just look at me. It`s nice\n" +
+                    "-----------This is First 20 pairs------------------\n"
+        );
+        fw.write(" | Word | Occurances | \n");
+        for (Map.Entry<String, Integer> entry :
+                glossarySortedDescFirstTwenty.entrySet()) {
+            fw.write(" | " + entry.getKey() + " : " +
+                    entry.getValue() + "\n");
+        }
+        fw.write(
+                "-----------This is alphabetic sorted names ---------\n"
+        );
+        fw.write(" | Word | Occurances | \n");
+        for (Map.Entry<String, Integer> entry :
+                glossarySortedProperNamesAlphabetic.entrySet()) {
+            fw.write(" | " + entry.getKey() + " : " +
+                    entry.getValue() + "\n");
+        }
 
+        fw.close();
 
     }
 }
