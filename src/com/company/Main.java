@@ -8,6 +8,23 @@
  * Copyright (c) Dmitriy Futsur
  *
  * Description:
+ *
+ * Home Task: Multi-threading.
+
+    1. Use the file from the previous task  - logs.txt.
+
+    2. Create a class that manages logs in this file.
+
+    3. Create a method that finds all the ERROR logs  for a specific
+       date and write them into a specific file (name = ERROR  + Date  + .log)
+
+    4. In your main class develop a functionality to create  5 such a files
+       for 5 different days. Launch them in consistent way (one after another ).
+
+    5. Repeat the above  task in parallel way. Multi-threading.
+
+    6. Compare the results.
+
  */
 
 package com.company;
@@ -17,8 +34,13 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
 /**
@@ -29,84 +51,92 @@ import java.util.stream.Stream;
 public class Main {
 
     /**
+     * Thread class to implement multithreading log search
+     * @author Dmitriy Futsur
+     * @version 1.0 24 Jun 2020
+     */
+    static class MyThread extends Thread {
+
+        /**
+         * Date to search for
+         */
+        private final String date;
+
+        /**
+         * Content of log file as a String to search in
+         */
+        private final String[] logsContent;
+
+        /**
+         * Constructor of thread object
+         * @param date Date to search for
+         * @param logsContent Content of log file as a String to search in
+         */
+        MyThread(String date, String[] logsContent) {
+            this.date = date;
+            this.logsContent = logsContent;
+        }
+
+        /**
+         *  Method to run thread with specific logic
+         *  to search for logs
+         */
+        @Override
+        public void run() {
+            LogsManagerServiceImpl logsManager = new LogsManagerServiceImpl();
+            try {
+                logsManager.writeLogsByDateAndTypeToFile(this.date,
+                        "ERROR", this.logsContent);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
      * Main method to execute
      * @param args Default params.
      * @throws IOException Throws error if there is no file exists.
+     * @throws InterruptedException Throws exception
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException,
+            InterruptedException {
 
-        // 1. Parse the file logs.txt (see the attachment).
-        // Extract to a separate file all the logs from October 2019.
+        LogsManagerServiceImpl logsManager = new LogsManagerServiceImpl();
         String logsContent =
                 new String (Files.readAllBytes(Paths.get(System.getProperty(
                         "user.dir") + "/src/logs.txt")));
         String[] stringLines = logsContent.split("\n");
-        FileWriter fw = new FileWriter("OctoberLogs.txt");
+        List<String> listOfDates = new ArrayList<>(Arrays.asList(
+                "2019-12-20", "2019-12-28", "2020-01-01",
+                "2019-12-09", "2019-12-27"
+        ));
 
-        // We will write to our OctoberLogs.txt file
-        // every line from string until we met 2019-11 date
-        int i = 0;
-        while (!(stringLines[i].contains("2019-11"))) {
-            fw.write(stringLines[i] + "\n");
-            i++;
+        System.out.println("--------------CONSISTANT------------------");
+        LocalDateTime consistentMakeLogsStart = LocalDateTime.now();
+        for(String date : listOfDates) {
+            logsManager.writeLogsByDateAndTypeToFile(date,
+                    "ERROR", stringLines);
         }
-        fw.close();
+        LocalDateTime consistentMakeLogsFinish = LocalDateTime.now();
 
-        // 2. Calculate the total number of logs (lines).
-        Stream<String> lines1 = Files.lines(Paths.get(System.getProperty(
-                "user.dir") + "/src/logs.txt"),
-                StandardCharsets.UTF_8);
-        long numberOfLinesFromLinesMethod = lines1.count();
-        System.out.println(
-                "Total number of log`s lines by Files.lines method = \"" +
-                        numberOfLinesFromLinesMethod +
-                        "\"");
+        System.out.println("Creation of all log files " +
+                "in a consistant way took \"" +
+                ChronoUnit.MILLIS.between(consistentMakeLogsStart
+                , consistentMakeLogsFinish) + "\" milliseconds\n");
 
-        long numberOfLinesFromStringMethod = stringLines.length;
-        System.out.println(
-                "Total number of log`s lines by String.split method = \"" +
-                        numberOfLinesFromStringMethod +
-                        "\"");
-
-        // 3. Calculate the total  number of  ERROR logs.
-        // Use previous skills - String.split
-        long numberOfErrorsByStringMethod = 0;
-
-        LocalDateTime searchErrorWithStringStart = LocalDateTime.now();
-        for (String stringLine : stringLines) {
-            if (stringLine.contains("ERROR")) {
-                numberOfErrorsByStringMethod++;
-            }
+        System.out.println("-------------MULTITHREADING------------------");
+        LocalDateTime multiThreadMakeLogsStart = LocalDateTime.now();
+        for(String date : listOfDates) {
+            new MyThread(date, stringLines).start();
         }
-        LocalDateTime searchErrorWithStringEnd = LocalDateTime.now();
+        LocalDateTime multiThreadMakeLogsFinish = LocalDateTime.now();
 
-        long milisecondsForStringMethod =
-                ChronoUnit.MILLIS.between(searchErrorWithStringStart,
-                        searchErrorWithStringEnd);
-        System.out.println(
-                "Total number of ERRORS by string method = \"" +
-                        numberOfErrorsByStringMethod +
-                        "\"");
-        System.out.println("Time results = " + milisecondsForStringMethod);
-
-        // 4.  Calculate the total number of ERROR logs. Use Files.lines.
-        Stream<String> lines2 = Files.lines(Paths.get(System.getProperty(
-                "user.dir") + "/src/logs.txt"),
-                StandardCharsets.UTF_8);
-
-        LocalDateTime searchErrorWithFilesStart = LocalDateTime.now();
-        long numberOfErrorsByFilesMethod =
-                lines2.filter(l->l.contains("ERROR")).count();
-        LocalDateTime searchErrorWithFilesEnd = LocalDateTime.now();
-
-        long milisecondsForFilesMethod =
-                ChronoUnit.MILLIS.between(searchErrorWithFilesStart,
-                        searchErrorWithFilesEnd);
-        System.out.println(
-                "Total number of ERRORS by files method = \"" +
-                        numberOfErrorsByFilesMethod +
-                        "\"");
-        System.out.println("Time results = " + milisecondsForFilesMethod);
+        // Make delay to output final message
+        TimeUnit.MILLISECONDS.sleep(1000);
+        System.out.println("\nCreation of all log files " +
+                "in a multithreaded hard to calculate because they start" +
+                "in chaotic way");
 
     }
 
