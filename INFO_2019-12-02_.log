@@ -1,0 +1,16 @@
+2019-12-02 08:51:42.090  INFO 23150 --- [nio-8088-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+2019-12-02 08:51:42.090  INFO 23150 --- [nio-8088-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+2019-12-02 08:51:42.090  INFO 23150 --- [nio-8088-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+2019-12-02 08:51:42.090  INFO 23150 --- [nio-8088-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+2019-12-02 08:51:42.090  INFO 23150 --- [nio-8088-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+2019-12-02 08:51:42.090  INFO 23150 --- [nio-8088-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+2019-12-02 08:51:42.090  INFO 23150 --- [nio-8088-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+2019-12-02 08:51:42.090  INFO 23150 --- [nio-8088-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+2019-12-02 08:51:42.090  INFO 23150 --- [nio-8088-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+2019-12-02 08:51:42.090  INFO 23150 --- [nio-8088-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+2019-12-02 08:51:42.090  INFO 23150 --- [nio-8088-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+2019-12-02 08:51:42.090  INFO 23150 --- [nio-8088-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+2019-12-02 08:51:42.090  INFO 23150 --- [nio-8088-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+2019-12-02 08:51:42.090  INFO 23150 --- [nio-8088-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+2019-12-02 19:28:30.115  INFO 23150 --- [nio-8088-exec-7] com.med.config.JwtAuthenticationFilter   : authenticated user vakarukip, setting security context
+2019-12-02 19:28:30.115  INFO 23150 --- [nio-8088-exec-7] com.med.config.JwtAuthenticationFilter   : authenticated user vakarukip, setting security context

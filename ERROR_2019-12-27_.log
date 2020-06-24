@@ -1,0 +1,22 @@
+2019-12-27 19:15:00.146 ERROR 54550 --- [pool-1-thread-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task.
+
+java.util.NoSuchElementException: No value present
+	at java.util.Optional.get(Optional.java:135) ~[na:1.8.0_232]
+	at com.med.services.SalaryDailyService.setDoctorsTruant(SalaryDailyService.java:364) ~[classes!/:0.0.1-SNAPSHOT]
+	at com.med.services.ScheduleService.markAbsentDoctors(ScheduleService.java:53) ~[classes!/:0.0.1-SNAPSHOT]
+	at sun.reflect.GeneratedMethodAccessor580.invoke(Unknown Source) ~[na:na]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_232]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_232]
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:65) ~[spring-context-5.0.4.RELEASE.jar!/:5.0.4.RELEASE]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.0.4.RELEASE.jar!/:5.0.4.RELEASE]
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93) [spring-context-5.0.4.RELEASE.jar!/:5.0.4.RELEASE]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_232]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_232]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_232]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [na:1.8.0_232]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_232]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_232]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_232]
+
+WORKDAY calculations are running
+WORKDAY COMPLETE 
