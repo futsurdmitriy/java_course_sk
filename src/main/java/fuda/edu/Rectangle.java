@@ -1,18 +1,20 @@
-package xyz.edu;
+package fuda.edu;
 
 import java.util.logging.Logger;
 
 public class Rectangle {
 
-    private static final Logger LOGGER = Logger.getLogger(Rectangle.class.getName());
-    private double height,weight;
+    private static final Logger LOGGER =
+            Logger.getLogger(Rectangle.class.getName());
+    private double height, weight;
 
     public Rectangle(double height, double weight) {
         this.height = height;
         this.weight = weight;
     }
 
-    public Rectangle() {}
+    public Rectangle() {
+    }
 
     public double getHeight() {
         return height;
